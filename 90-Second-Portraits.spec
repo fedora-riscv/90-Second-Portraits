@@ -1,6 +1,6 @@
 Name:           90-Second-Portraits
 Version:        1.01b
-Release:        2%{?dist}
+Release:        3%{?dist}
 Summary:        Frantic street painting game
 
 #See LICENSE file in source for details
@@ -16,6 +16,11 @@ BuildRequires:  desktop-file-utils
 BuildRequires:  libappstream-glib
 BuildArch:      noarch
 Requires:       love
+
+# List the arches that love builds on prior to f28
+%if 0%{?fedora} < 28
+ExclusiveArch: %{arm} %{ix86} x86_64 %{mips} aarch64 ppc64
+%endif
 
 #From the website (see URL above)
 %description
@@ -66,6 +71,9 @@ install -p -D -m 0644 data/images/title_background.png \
 %{_datadir}/appdata/*.appdata.xml
 
 %changelog
+* Sat Mar 17 2018 Jeremy Newton <alexjnewt at hotmail dot com> - 1.01b-3
+- Prepare backport to all fedora branches
+
 * Fri Mar 16 2018 Jeremy Newton <alexjnewt at hotmail dot com> - 1.01b-2
 - Fix license and use license macro
 - Move some documentation to correct location
