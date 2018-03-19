@@ -36,7 +36,7 @@ sed -i 's/VERSION/%{version}/g' appdata/%{name}.6
 
 %build
 #love "binary" files are just zipped sources, but should exclude appdata/docs
-zip -r %{name}.love . -x appdata -x *.txt -x *.md
+zip -r %{name}.love . -x appdata/* -x appdata/ -x *.txt -x *.md
 
 %install
 #Install love file
@@ -73,6 +73,7 @@ install -p -D -m 0644 data/images/title_background.png \
 %changelog
 * Sat Mar 17 2018 Jeremy Newton <alexjnewt at hotmail dot com> - 1.01b-3
 - Prepare backport to all fedora branches
+- Properly exclude appdata folder from binary
 
 * Fri Mar 16 2018 Jeremy Newton <alexjnewt at hotmail dot com> - 1.01b-2
 - Fix license and use license macro
