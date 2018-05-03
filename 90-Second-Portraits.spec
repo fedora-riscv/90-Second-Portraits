@@ -17,10 +17,8 @@ BuildRequires:  libappstream-glib
 BuildArch:      noarch
 Requires:       love
 
-# List the arches that love builds on prior to f28
-%if 0%{?fedora} < 28
-ExclusiveArch: %{arm} %{ix86} x86_64 %{mips} aarch64 ppc64
-%endif
+# List the arches that love builds on epel7
+ExclusiveArch: noarch %{arm} %{ix86} x86_64 aarch64
 
 #From the website (see URL above)
 %description
