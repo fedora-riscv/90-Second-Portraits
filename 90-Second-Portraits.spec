@@ -12,6 +12,7 @@ Source0:        https://github.com/SimonLarsen/%{name}/releases/download/%{versi
 #Patch for appdata, manpage, execution script, and desktop file
 Patch0:         %{name}-appdata.patch
 %if 0%{?fedora} > 28
+#https://github.com/SimonLarsen/90-Second-Portraits/pull/6
 Patch2:         %{name}-%{version}-love11.patch
 %endif
 
