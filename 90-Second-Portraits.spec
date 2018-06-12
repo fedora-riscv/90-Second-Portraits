@@ -1,6 +1,6 @@
 Name:           90-Second-Portraits
 Version:        1.01b
-Release:        3%{?dist}
+Release:        4%{?dist}
 Summary:        Frantic street painting game
 
 #See LICENSE file in source for details
@@ -11,6 +11,9 @@ URL:            http://tangramgames.dk/games/90secondportraits/
 Source0:        https://github.com/SimonLarsen/%{name}/releases/download/%{version}/90secondportraits-%{version}.love#/%{name}-%{version}.zip
 #Patch for appdata, manpage, execution script, and desktop file
 Patch0:         %{name}-appdata.patch
+%if 0%{?fedora} > 28
+Patch2:         %{name}-%{version}-love11.patch
+%endif
 
 BuildRequires:  desktop-file-utils
 BuildRequires:  libappstream-glib
@@ -71,6 +74,9 @@ install -p -D -m 0644 data/images/title_background.png \
 %{_datadir}/appdata/*.appdata.xml
 
 %changelog
+* Tue Jun 12 2018 Jeremy Newton <alexjnewt at hotmail dot com> - 1.01b-4
+- Add love 11 support
+
 * Sat Mar 17 2018 Jeremy Newton <alexjnewt at hotmail dot com> - 1.01b-3
 - Prepare backport to all fedora branches
 - Properly exclude appdata folder from binary
