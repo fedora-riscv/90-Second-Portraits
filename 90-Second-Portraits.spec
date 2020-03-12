@@ -1,6 +1,6 @@
 Name:           90-Second-Portraits
 Version:        1.01b
-Release:        8%{?dist}
+Release:        9%{?dist}
 Summary:        Frantic street painting game
 
 #See LICENSE file in source for details
@@ -21,10 +21,8 @@ BuildRequires:  libappstream-glib
 BuildArch:      noarch
 Requires:       love
 
-# List the arches that love builds on prior to f28
-%if 0%{?fedora} < 28
-ExclusiveArch: %{arm} %{ix86} x86_64 %{mips} aarch64 ppc64
-%endif
+# List the arches that love builds on
+ExclusiveArch: %{arm} %{ix86} x86_64 aarch64 ppc64le
 
 #From the website (see URL above)
 %description
@@ -75,6 +73,9 @@ install -p -D -m 0644 data/images/title_background.png \
 %{_datadir}/appdata/*.appdata.xml
 
 %changelog
+* Thu Mar 12 2020 Jeremy Newton <alexjnewt at hotmail dot com> - 1.01b-9
+- Rebuilt for correct exclusive arch
+
 * Tue Jan 28 2020 Fedora Release Engineering <releng@fedoraproject.org> - 1.01b-8
 - Rebuilt for https://fedoraproject.org/wiki/Fedora_32_Mass_Rebuild
 
