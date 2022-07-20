@@ -1,6 +1,6 @@
 Name:           90-Second-Portraits
 Version:        1.01b
-Release:        13%{?dist}
+Release:        14%{?dist}
 Summary:        Frantic street painting game
 
 #See LICENSE file in source for details
@@ -73,6 +73,9 @@ install -p -D -m 0644 data/images/title_background.png \
 %{_datadir}/appdata/*.appdata.xml
 
 %changelog
+* Wed Jul 20 2022 Fedora Release Engineering <releng@fedoraproject.org> - 1.01b-14
+- Rebuilt for https://fedoraproject.org/wiki/Fedora_37_Mass_Rebuild
+
 * Wed Jan 19 2022 Fedora Release Engineering <releng@fedoraproject.org> - 1.01b-13
 - Rebuilt for https://fedoraproject.org/wiki/Fedora_36_Mass_Rebuild
 
