@@ -1,6 +1,6 @@
 Name:           90-Second-Portraits
 Version:        1.01b
-Release:        17%{?dist}
+Release:        17.rv64%{?dist}
 Summary:        Frantic street painting game
 
 # Zlib: Main package
@@ -25,7 +25,7 @@ BuildArch:      noarch
 Requires:       love
 
 # List the arches that love builds on
-ExclusiveArch: %{arm} %{ix86} x86_64 aarch64 ppc64le
+ExclusiveArch: %{arm} %{ix86} x86_64 aarch64 ppc64le riscv64
 
 #From the website (see URL above)
 %description
@@ -79,6 +79,9 @@ install -p -D -m 0644 data/images/title_background.png \
 %{_datadir}/appdata/*.appdata.xml
 
 %changelog
+* Tue Nov 28 2023 Liu Yang <Yang.Liu.sn@gmail.com> - 1.01b-17.rv64
+- Add riscv64.
+
 * Wed Aug 23 2023 Jeremy Newton <alexjnewt at hotmail dot com> - 1.01b-17
 - Migrate to SPDX license
 - Fix license breakdown
